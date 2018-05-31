@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { InfoComponent } from './info/info.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SocialComponent } from './social/social.component';
+import { FilterPipe } from './common/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
     WeatherComponent,
-    SocialComponent
+    SocialComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule

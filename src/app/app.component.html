@@ -1,11 +1,14 @@
 <h1>Hot Weather Widget</h1>
 <div class="element">
   <div class="element-left">
-    <app-info></app-info>
+    <app-info [places]="places | filter: filterState"
+              (selectedPlace)="setCurrent($event)"
+              (filterState)="setFilter($event)"
+    ></app-info>
   </div>
   <div class="element-right">
-    <app-weather></app-weather>
-    <app-social></app-social>
+    <app-weather [weather]="currentPlace.weather"></app-weather>
+    <app-social [social]="currentPlace.social_info"></app-social>
   </div>
   <div class="clear"> </div>
 </div>

@@ -1,3 +1,6 @@
+import {Observable, Observer, of} from 'rxjs';
+import {delay} from 'rxjs/operators';
+
 export interface IWeather {
   type: string;
   water: number;
@@ -11,7 +14,7 @@ export interface ISocial {
   following: number;
 }
 
-export interface IPlaces {
+export interface IPlace extends IWeather, ISocial {
   title: string;
   image: string;
   address: string;
@@ -21,9 +24,28 @@ export interface IPlaces {
   type: string;
 }
 
+/*export interface IPlace {
+  title: string;
+  image: string;
+  address: string;
+  phone: number;
+  weather: {
+    type: string;
+    water: number;
+    temperature: number;
+  };
+  social_info: {
+    subtitle: string;
+    image: string;
+    followers: number;
+    following: number;
+  };
+  type: string;
+}*/
+
 const data: Array<any> = [{
   'title': 'Синяя борода',
-  'image': 'images/boroda1.jpg',
+  'image': 'boroda1.jpg',
   'address': 'улица Пушкина, дом Колотушкина',
   'phone': '+4 432 344 32 44',
   'weather': {
@@ -32,8 +54,8 @@ const data: Array<any> = [{
     'temperature': 12
   },
   'social_info': {
-    'subtitle': 'Никто не уходил',
-    'image': 'images/boroda2.jpg',
+    'subtitle': 'Еще никто не уходил',
+    'image': 'boroda2.jpg',
     'followers': 132,
     'following': 231,
    },
@@ -41,17 +63,17 @@ const data: Array<any> = [{
 },
   {
     'title': 'Ну, за рыбалку!',
-    'image': 'images/kuzmich1.jpg',
+    'image': 'kuzmich1.jpg',
     'address': 'в Темно-синем лесу, где трепещут осины',
     'phone': '+7 893 843 93 90',
     'weather': {
-      'type': 'sunny', // cloudy windy snowy rainy
+      'type': 'sunny',
       'water': 12,
       'temperature': 27
     },
     'social_info': {
       'subtitle': 'Лайки Кузьмичу',
-      'image': 'images/kuzmich2.jpg',
+      'image': 'kuzmich2.jpg',
       'followers': 234,
       'following': 634,
     },
@@ -59,7 +81,7 @@ const data: Array<any> = [{
   },
   {
     'title': 'Охота на лося',
-    'image': 'images/hunt1.jpg',
+    'image': 'hunt1.jpg',
     'address': 'Охотничье хозяйство «Зайцева Гора»',
     'phone': '+5 666 983 00 93',
     'weather': {
@@ -69,7 +91,7 @@ const data: Array<any> = [{
     },
     'social_info': {
       'subtitle': 'Лось Лось',
-      'image': 'images/hunt2.jpg',
+      'image': 'hunt2.jpg',
       'followers': 834,
       'following': 1234,
     },
@@ -77,20 +99,26 @@ const data: Array<any> = [{
   },
   {
     'title': 'Пеший тур',
-    'image': 'images/tour1.jpg',
+    'image': 'tour1.jpg',
     'address': 'Налево пойдешь - коня потеряешь',
     'phone': '+5 666 983 00 93',
     'weather': {
-      'type': 'snowy', // cloudy windy snowy rainy
+      'type': 'snowy',
       'water': 2,
       'temperature': 2
     },
     'social_info': {
       'subtitle': 'Экскурсия',
-      'image': 'images/tour2.jpg',
+      'image': 'tour2.jpg',
       'followers': 34,
       'following': 234,
     },
     'type': 'tour'
   }
 ];
+
+export const places$: Observable<IPlace[]> = of(data);
+  /*.pipe(
+    delay(3000)
+  );
+*/
