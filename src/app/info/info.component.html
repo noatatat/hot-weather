@@ -1,4 +1,4 @@
-<div class="element-bg-img"><img src="../../assets/images/1.jpg" alt="" class="img-responsive"> </div>
+<div class="element-bg-img"><img [src]="'../../assets/images/' + current.image" alt=""> </div>
 <div class="element-left-bottom">
   <div class="ele-strip">
     <ul (click)="onFilterClick($event)">
@@ -22,8 +22,8 @@
           </div>
           <div class="activity-img">
             <ul>
-              <li><img [src]="'../../assets/images/' + '1.jpg'"  alt=""/></li>
-              <li><img [src]="'../../assets/images/' + 'b1.jpg'"  alt=""/></li>
+              <li><img [src]="'../../assets/images/' + place.image"  alt=""/></li>
+              <li><img [src]="'../../assets/images/' + place.social_info.image"  alt=""/></li>
               <!--<li><img [src]="place.image"  alt=""/></li>-->
               <!--<li><img [src]="place.social_info.image"  alt=""/></li>-->
             </ul>

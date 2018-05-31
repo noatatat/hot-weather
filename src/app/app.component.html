@@ -2,6 +2,7 @@
 <div class="element">
   <div class="element-left">
     <app-info [places]="places | filter: filterState"
+              [current]="currentPlace"
               (selectedPlace)="setCurrent($event)"
               (filterState)="setFilter($event)"
     ></app-info>

@@ -9,6 +9,9 @@ import {isUndefined} from 'util';
 })
 export class InfoComponent implements OnInit {
   @Input()
+  public current: IPlace;
+
+  @Input()
   public places: IPlace[];
 
   @Output()
