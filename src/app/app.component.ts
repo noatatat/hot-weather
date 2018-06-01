@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {IPlace, places$} from './places';
-import {Observable} from 'rxjs';
-import {FilterPipe} from './common/pipe/filter.pipe';
 
 @Component({
   selector: 'app-root',

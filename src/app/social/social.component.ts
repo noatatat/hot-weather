@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ISocial} from '../places';
 
 @Component({
@@ -6,14 +6,8 @@ import {ISocial} from '../places';
   templateUrl: './social.component.html',
   styleUrls: ['./social.component.css']
 })
-export class SocialComponent implements OnInit {
+
+export class SocialComponent {
   @Input()
   public social: ISocial;
-
-  constructor() { }
-
-  ngOnInit() {
-    console.log(this.social);
-  }
-
 }

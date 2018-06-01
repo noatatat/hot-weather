@@ -1,13 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IPlace} from '../places';
-import {isUndefined} from 'util';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css']
 })
-export class InfoComponent implements OnInit {
+export class InfoComponent {
   @Input()
   public current: IPlace;
 
@@ -19,12 +18,6 @@ export class InfoComponent implements OnInit {
 
   @Output()
   filterState: EventEmitter<string> = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit() {
-    console.log(this.places);
-  }
 
   onSelect(select) {
     this.selectedPlace.emit(select);
