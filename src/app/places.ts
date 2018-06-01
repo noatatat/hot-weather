@@ -14,7 +14,7 @@ export interface ISocial {
   following: number;
 }
 
-export interface IPlace {
+export interface IPlace extends IWeather, ISocial {
   title: string;
   image: string;
   address: string;
