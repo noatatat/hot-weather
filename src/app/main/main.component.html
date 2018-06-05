@@ -1,0 +1,27 @@
+<div class="element-bg-img"><img [src]="url + current.image" alt=""> </div>
+<div class="element-left-bottom">
+  <div class="ele-strip">
+    <ul (click)="onFilterClick($event)">
+      <li><a id="hotel" href="#">Отель</a></li>
+      <li><a id="fishing" href="#">Рыбалка</a></li>
+      <li><a id="hunt" href="#">Охота</a></li>
+      <li><a id="tour" href="#">Тур</a></li>
+      <li><a id="all" href="#">Все</a></li>
+    </ul>
+  </div>
+  <div class="village">
+    <h3>Наши предложения</h3>
+    <span class="line"> </span>
+    <div class="activity_box">
+      <div class="scrollbar" id="style-2">
+        <app-info-card
+          *ngFor="let place of places"
+          [url]="url"
+          [place]="place"
+          (click)="onSelect(place)"
+        ></app-info-card>
+      </div>
+    </div>
+  </div>
+</div>
+

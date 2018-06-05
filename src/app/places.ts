@@ -24,26 +24,7 @@ export interface IPlace extends IWeather, ISocial {
   type: string;
 }
 
-/*export interface IPlace {
-  title: string;
-  image: string;
-  address: string;
-  phone: number;
-  weather: {
-    type: string;
-    water: number;
-    temperature: number;
-  };
-  social_info: {
-    subtitle: string;
-    image: string;
-    followers: number;
-    following: number;
-  };
-  type: string;
-}*/
-
-const data: Array<any> = [{
+export const data: Array<any> = [{
   'title': 'Синяя борода',
   'image': 'boroda1.jpg',
   'address': 'улица Пушкина, дом Колотушкина',
@@ -116,9 +97,3 @@ const data: Array<any> = [{
     'type': 'tour'
   }
 ];
-
-export const places$: Observable<IPlace[]> = of(data);
-  /*.pipe(
-    delay(3000)
-  );
-*/

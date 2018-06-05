@@ -1,0 +1,14 @@
+<div class="activity-row">
+  <div class="activity-desc">
+    <h5>{{place.title}}</h5>
+    <p>{{place.address}}</p>
+    <h6>Tel: {{place.phone}}</h6>
+  </div>
+  <div class="activity-img">
+    <ul>
+      <li appScale><img [src]="url + place.image"  alt=""/></li>
+      <li appScale><img [src]="url + place.social_info.image"  alt=""/></li>
+    </ul>
+  </div>
+  <div class="clear"> </div>
+</div>
